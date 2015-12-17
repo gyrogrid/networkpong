@@ -2,7 +2,7 @@
 
 Welcome to network pong! 
 
-This game is over any network including the internet. If you want to play it, please download a client.py file and inform me.
+This game can be played over any network including the internet. If you want to play it, please download a client.py file and inform me.
 I will start the game on the server and we can then play!
 
 Two python libraries are required, please install them before attempting to play:
