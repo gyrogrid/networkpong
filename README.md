@@ -1,7 +1,3 @@
-# networkpong
-
-Welcome to network pong! 
-
 Introduction
 ============
 This game can be played over a network, local or internet. However internet play is not possible on slow connections due to lack of any latency optimizations.
