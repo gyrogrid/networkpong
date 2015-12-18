@@ -13,7 +13,7 @@ Requirements
 
 Configuration/Installation
 ===========================
-There are three files, one Server.py and two client files (Client1.py & Client2.py).
+There are three files, one server (Game.py) and two client files (Client1.py & Client2.py).
 The files are configured to work on 'localhost' by default. 
 
 If you want to play on different computers, find the following line in the client files:
@@ -22,17 +22,8 @@ If you want to play on different computers, find the following line in the clien
 
 and replace `localhost` with the IP Address of the server.
 
-### Game structure
-The game has 3 files:
-1. Game.py: The server
-2. Client1.py: Player 1
-3. Client2.py: Player 2
-
-Running `python Game.py' will start the server. Running 'python Clientx.py' will connect to the server and start the game.
-
-The files can be run on separate computers on a single network, the only configuration needed is the server's hostname/ip address in the client files. Look for the following line and replace `localhost` with the server's ip/hostname:
-
-conn = rpyc.connect('localhost', 12345, config={"allow_all_attrs": True})
+`python Game.py` will start the server. 
+`python Clientx.py` will connect to the server and start the game.
 
 ### Game logic and physics
 The game passes around a gamedata dictionary that contains all the variables related to the position of the elements. This dictionary is passed by the server to the clients and the clients use it to render the objects (using PyGame library functions). When a player gives keyboard inputs on the client side, these inputs are passed via the RPyC connection to the movepad function back at the server. The function updates the gamedata dictionary with the pad and ball's new positions and sends it back to the client. 
@@ -50,6 +41,3 @@ The game can be improved greatly by adding the following features:
 1) Game loop and listening server on the server side: This is an absolutely essential requirement.  Right now, the server  runs a blocking server so there is no way to run a game loop on the server side. If we can run the server in the background or use some asynchronous logic, then we can have the game loop in the server. This will solve the issue of the ball moving only when a player makes a move.
 
 2) Game physics fine tuning: I have not paid much attention to the if statements of the ball and pad movement logic because of the limitation of the ball moving only when the player moves. Once we can run the game loop on the server, the game will become much easier to play and then these changes will be easy to make.
-
-
-
