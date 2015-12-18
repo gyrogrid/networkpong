@@ -28,19 +28,31 @@
         </ul>
       </header>
       <section>
-        <h3>
-<a id="game-structure" class="anchor" href="#game-structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Game structure</h3>
+        <h1>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h1>
 
-<p>The game has 3 files:
-1. Game.py: The server
-2. Client1.py: Player 1
-3. Client2.py: Player 2</p>
+<p>This game can be played over a network, local or internet. However internet play is not possible on slow connections due to lack of any latency optimizations.</p>
 
-<p>Running `python Game.py' will start the server. Running 'python Clientx.py' will connect to the server and start the game.</p>
+<h1>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h1>
 
-<p>The files can be run on separate computers on a single network, the only configuration needed is the server's hostname/ip address in the client files. Look for the following line and replace <code>localhost</code> with the server's ip/hostname:</p>
+<p>1) PyGame
+2) RPyC</p>
 
-<p>conn = rpyc.connect('localhost', 12345, config={"allow_all_attrs": True})</p>
+<h1>
+<a id="configurationinstallation" class="anchor" href="#configurationinstallation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration/Installation</h1>
+
+<p>There are three files, one server (Game.py) and two client files (Client1.py &amp; Client2.py).
+The files are configured to work on 'localhost' by default. </p>
+
+<p>If you want to play on different computers, find the following line in the client files:</p>
+
+<p><code>conn = rpyc.connect('localhost', 12345, config={"allow_all_attrs": True})</code></p>
+
+<p>and replace <code>localhost</code> with the IP Address of the server.</p>
+
+<p><code>python Game.py</code> will start the server. 
+<code>python Clientx.py</code> will connect to the server and start the game.</p>
 
 <h3>
 <a id="game-logic-and-physics" class="anchor" href="#game-logic-and-physics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Game logic and physics</h3>
