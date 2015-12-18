@@ -41,8 +41,8 @@
 <p>The files can be run on separate computers on a single network, the only configuration needed is the server's hostname/ip address in the client files. Look for the following line and replace <code>localhost</code> with the server's ip/hostname:
 'conn = rpyc.connect('localhost', 12345, config={"allow_all_attrs": True})`</p>
 
-<h2>
-<a id="game-logic-and-physics" class="anchor" href="#game-logic-and-physics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Game logic and physics</h2>
+<h3>
+<a id="game-logic-and-physics" class="anchor" href="#game-logic-and-physics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Game logic and physics</h3>
 
 <p>The game passes around a gamedata dictionary that contains all the variables related to the position of the elements. This dictionary is passed by the server to the clients and the clients use it to render the objects (using PyGame library functions). When a player gives keyboard inputs on the client side, these inputs are passed via the RPyC connection to the movepad function back at the server. The function updates the gamedata dictionary with the pad and ball's new positions and sends it back to the client. </p>
 
